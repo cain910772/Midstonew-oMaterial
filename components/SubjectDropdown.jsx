@@ -3,48 +3,61 @@ import { Button, DropdownButton, Dropdown, DropdownToggle, DropdownMenu } from '
 import ReactDOM from 'react-dom';
 import { Route, withRouter } from 'react-router-dom'
 import SubjectSearch from "./Dropdown";
-
+import StemSearch from "./Stemdd";
 
 
 class SubjectsearchSmall extends Component {
+constructor(props){
+super (props)
 
-    state = {
-       Subjects:[],
-      ListFilter:[]
+    this.state = {
+    Subjects:[],
+      ListFilter1:[],
+      ListFilter2:[],
+      ListFilter3:[],
+      ListFilter4:[],
+      ListFilter5:[],
+     
       
     }
-    
+}
     componentDidMount() {
         fetch(" http://localhost:8088/Subjects")
-            // Must be explicit on how to parse the response
             .then(response => response.json())
-            .then(apiSubjects => {
-                console.log(apiSubjects);
+            .then(ApiSubjects => {
+                console.log(ApiSubjects);
                
                 this.setState({
-                    Subjects:apiSubjects
+                    Subjects:ApiSubjects
                     })
             })
+        }
+    
 
-    }
     render() {
-        const ListFilter = this.state.Subjects
+        const ListFilter1 = this.state.Subjects
         .filter(function(Subject){return Subject.MetaSubjectId===1;})
-       console.log(ListFilter);
-        //   const stemFilter = this.state.listFilter
-        //   .map(function(listFilter){return listFilter.stemFilter})
-        //   console.log(listFilter)
-        return (
-            <DropdownButton title="List of Stem Subjects">
-         
-            {this.state.ListFilter}
-             <ul>
-             <li> <apimetasubjects 
-                 key ={ListFilter.ListFilter}/></li>
-                 </ul>
-          
-            
-            </DropdownButton>
-          )}
-      }
+        {this.props.ListFilter1}
+        
+        const ListFilter2 = this.state.Subjects
+        .filter(function(Subject){return Subject.MetaSubjectId===2;})
+        const ListFilter3 = this.state.Subjects
+        .filter(function(Subject){return Subject.MetaSubjectId===3;})
+        const ListFilter4 = this.state.Subjects
+        .filter(function(Subject){return Subject.MetaSubjectId===4;})
+        const ListFilter5 = this.state.Subjects
+        .filter(function(Subject){return Subject.MetaSubjectId===5;})
+       console.log(ListFilter3);
+    
+        return ( 
+           <div></div>
+         ) }
+        
+        
+      }     
+    
+           
+           
+   
+  
 export default SubjectsearchSmall;

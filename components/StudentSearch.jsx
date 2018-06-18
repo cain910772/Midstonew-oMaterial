@@ -1,13 +1,10 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import {Jumbotron, Grid , Row , Col, Image , Button ,Form, FormControl,FormGroup,ControlLabel } from 'react-bootstrap';
 import "./Teacher.css";
-import { Button, DropdownButton, Dropdown, DropdownToggle, DropdownMenu,Form,FormControl } from 'react-bootstrap';
-import SubjectSearch  from './Dropdown';
-import SubjectSearchSmall  from './SubjectDropdown';
-import StudentSearch from "./StudentSearch";
-// import StudentSearch from"./component/StudentSearch";
 
 
-export class Teacher extends Component {
+ class StudentSearch extends Component {
    
    
    
@@ -41,14 +38,12 @@ export class Teacher extends Component {
         }))
 
         fetch("http://localhost:8088/students", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(newStudentInfo)
+          
         })
         .then(r => r.json())
-        .then(newStudentInfo => console.log(newStudentInfo))
+        .then(StudentInfo => {
+            this.setState(StudentInfo)
+        })
 
     }.bind(this)
 
@@ -63,18 +58,7 @@ export class Teacher extends Component {
     render() {
         return (
             <div>
-                
-                <form className="NewStudentForm" onSubmit={this.handleSubmit}>
-                    <input type ="text" val={this.state.firstName}
-                        id="firstName"
-                        onChange={e =>this.handleFormFieldChange(e)}
-                        placeholder="Enter students first name"
-                    />
-                    <input type ="text" val={this.state.lastName}
-                        id="lastName"
-                        onChange={e =>this.handleFormFieldChange(e)}
-                        placeholder="Enter students last name"
-                    />
+                <form>
                     <input type ="text" val={this.state.StudentsSSN}
                         id="StudentsSSN"
                         onChange={e =>this.handleFormFieldChange(e)}
@@ -82,11 +66,9 @@ export class Teacher extends Component {
                     />
              
 
-                    <button>Add New Student</button>
+                    <button>Search Student</button>
                 </form>
-                <SubjectSearch  />
-               <SubjectSearchSmall />
-              <StudentSearch />
+        
              
                
             </div>
@@ -94,4 +76,4 @@ export class Teacher extends Component {
     }
 }
 
-export default Teacher;
+export default StudentSearch;

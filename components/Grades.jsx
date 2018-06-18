@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import {Jumbotron, Grid , Row , Col, Image , Button } from 'react-bootstrap';
-
+import {Jumbotron, Grid , Row , Col, Image , Button, FormControl,Form } from 'react-bootstrap';
+import SearchStudent from './StudentSearch';
                 
 
 export default class Grades extends Component {

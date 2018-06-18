@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Button, DropdownButton, Dropdown, DropdownToggle, DropdownMenu,ListGroup,ListGroupItem } from 'react-bootstrap';
 import ReactDOM from 'react-dom';
-import { Route, withRouter } from 'react-router-dom'
-
-
+import { Route, withRouter } from 'react-router-dom';
+import SubjectsearchSmall from './SubjectDropdown';
+import StemSearch from "./Stemdd";
+// import SearchStudent from './StudentSearch';
 
 class SubjectSearch extends Component {
 
@@ -40,6 +41,8 @@ class SubjectSearch extends Component {
                     
                 )}
               </ul>
+              {/* <StudentSearch /> */}
+              <StemSearch />
               </DropdownButton>
             )}
         }
