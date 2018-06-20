@@ -6,12 +6,12 @@ import SubjectSearch from "./Dropdown";
 import SubjectsearchSmall from './SubjectDropdown';
 
 
-class Stem extends Component{
+class SocialStudies extends Component{
     constructor(props) {
         super(props);
     
 
-    this.state ={ListFilter1: [],
+    this.state ={ListFilter4: [],
     }}
     componentDidMount() {
         fetch(" http://localhost:8088/Subjects")
@@ -27,11 +27,13 @@ class Stem extends Component{
     }
 
     render() {
-        const ListFilter1= this.state.ListFilter1
-            .filter(function (ListFilter1) { return ListFilter1.MetaSubjectId === 1;  console.log(ListFilter1);})
-
+        const ListFilter4= this.state.ListFilter4
+            .filter(function (ListFilter4) { return ListFilter4.MetaSubjectId === 400;  console.log(ListFilter4);})
+      
     return(
-       <DropdownButton id= "Stem" title ="Stem">
+       <DropdownButton id= "SocialStudies" title ="SocialStudies">
+     {this.props.ListFilter4}
+     hello
      
        </DropdownButton>
 
@@ -41,4 +43,4 @@ class Stem extends Component{
 }
 
 
-export default Stem;
+export default SocialStudies;

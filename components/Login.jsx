@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import "./Login.css"
 
 
-export default class Login extends Component {
+ class Login extends Component {
 
     // Set initial state
     state = {
@@ -75,3 +75,4 @@ export default class Login extends Component {
         )
     }
 }
+export default Login;

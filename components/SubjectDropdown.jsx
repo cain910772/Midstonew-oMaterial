@@ -4,60 +4,61 @@ import ReactDOM from 'react-dom';
 import { Route, withRouter } from 'react-router-dom'
 import SubjectSearch from "./Dropdown";
 import StemSearch from "./Stemdd";
-
-
+import SocialStudies2 from "./SocialStudies2";
+import LifeSkills from "./LifeSkills";
+import LanguageArts from "./LanguageArts";
+import Electives from "./Electives";
 class SubjectsearchSmall extends Component {
-constructor(props){
-super (props)
+   
 
-    this.state = {
-    Subjects:[],
-      ListFilter1:[],
-      ListFilter2:[],
-      ListFilter3:[],
-      ListFilter4:[],
-      ListFilter5:[],
-     
-      
-    }
-}
+        state = {
+            Subjects: []
+           
+        }
+  
     componentDidMount() {
         fetch(" http://localhost:8088/Subjects")
             .then(response => response.json())
             .then(ApiSubjects => {
-                console.log(ApiSubjects);
-               
-                this.setState({
-                    Subjects:ApiSubjects
-                    })
+                // console.log(ApiSubjects);
+            this.setState({
+                    Subjects: ApiSubjects
+                })
             })
-        }
-    
+    }
+
 
     render() {
         const ListFilter1 = this.state.Subjects
-        .filter(function(Subject){return Subject.MetaSubjectId===1;})
-        {this.props.ListFilter1}
-        
+            .filter(function (Subjects) { return Subjects.MetaSubjectId === 100; 
+            })
+
         const ListFilter2 = this.state.Subjects
-        .filter(function(Subject){return Subject.MetaSubjectId===2;})
+            .filter(function (Subject) { return Subject.MetaSubjectId === 200; })
         const ListFilter3 = this.state.Subjects
-        .filter(function(Subject){return Subject.MetaSubjectId===3;})
-        const ListFilter4 = this.state.Subjects
-        .filter(function(Subject){return Subject.MetaSubjectId===4;})
+            .filter(function (Subject) { return Subject.MetaSubjectId === 300; })
+        
         const ListFilter5 = this.state.Subjects
-        .filter(function(Subject){return Subject.MetaSubjectId===5;})
-       console.log(ListFilter3);
+            .filter(function (Subject) { return Subject.MetaSubjectId === 500; })
+           console.log(ListFilter1);console.log(ListFilter2);console.log(ListFilter3);
+           console.log(ListFilter5);
+        return (
+<div >
+           <center> 
+     <SocialStudies2 /> 
+     < StemSearch />
+     <LifeSkills />
+     < LanguageArts />
+     < Electives />
+                    <h3>Add New Classes</h3>
+                    </center>
+                 
+                    </div>
+                    )
+           }
+        }
     
-        return ( 
-           <div></div>
-         ) }
-        
-        
-      }     
+       
     
-           
-           
-   
-  
-export default SubjectsearchSmall;
+       
+       export default SubjectsearchSmall;

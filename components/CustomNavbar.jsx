@@ -18,27 +18,28 @@ export default class CustomNavbar extends Component{
                                 <Nav pullRight>
                                 <NavItem eventKey ={0} componentClass = {Link} href="/" to ="/">
                                 Home
-                                {/* </NavItem>
-                                {/* <NavItem eventKey ={1} componentClass = {Link} href="/Login" to ="/Login">
+                                </NavItem>
+                                <NavItem eventKey ={1} componentClass = {Link} href="/Login" to ="/Login">
                                 Login
-                                </NavItem> */}
-                                {/* <NavItem eventKey ={2} componentClass = {Link} href="/Student"to ="/Student">
-                                Student */}
-                                {/* </NavItem>
+                                </NavItem> 
+                            
+                                 <NavItem eventKey ={2} componentClass = {Link} href="/Student"to ="/Student">
+                                Student 
+                                  </NavItem> 
                                 <NavItem eventKey ={3} componentClass = {Link} href ="/Grades" to ="/Grades">
                                 Grades
-                                </NavItem> */} 
-                                {/* {/* <NavItem eventKey ={4} componentClass = {Link} href="/Teacher" to ="/Teacher">
+                                </NavItem> 
+                                  <NavItem eventKey ={4} componentClass = {Link} href="/Teacher" to ="/Teacher">
                                 Teacher
                                 </NavItem>
-                                <NavItem eventKey ={5} componentClass = {Link} href ="Crypto" to ="/Crypto">
-                                Crypto */}
+                                <NavItem eventKey ={5} componentClass = {Link} href ="Crypto" to ="/Crypto"> 
+                                Crypto
                                 </NavItem>
                                 </Nav> 
-                               </Navbar.Collapse>
+                               </Navbar.Collapse> 
                                 
-                                </Navbar>
+                              </Navbar>
 
         )
     }
-}
+    }

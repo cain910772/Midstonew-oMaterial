@@ -12,7 +12,8 @@ import Auth from './components/AuthService';
 import Login from './components/Login';
 import SubjectSearch from './components/Dropdown';
 import SubjectSearchSmall from './components/SubjectDropdown';
-
+import SocialStudies from"./components/SocialStudies";
+import TeacherLogin from "./components/TeacherLogin"
 
 
 
@@ -26,12 +27,12 @@ class App extends Component{
   <Navbar />
   <Route exact path ="/" component ={Home}/>
   <Route path ="/Student" component ={Student}/>
-  {/* <Route path ="/StudentLogin" component ={Student}/> */}
+  <Route path ="/StudentLogin" component ={Student}/>
   {/* <Route path ="/Crypto" component ={Crypto}/> */}
   <Route path ="/Grades" component ={Grades}/>
   <Route path ="/Teacher" component ={Teacher}/>
-  {/* <Route path = "/TeacherLogin"component = {TeacherLogin}/>
-  */}
+ <Route path = "/TeacherLogin"component = {TeacherLogin}/> 
+  
   </div>
     </Router>
     );

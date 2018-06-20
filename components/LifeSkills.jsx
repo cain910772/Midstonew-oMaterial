@@ -6,19 +6,19 @@ import SubjectSearch from "./Dropdown";
 import SubjectsearchSmall from './SubjectDropdown';
 
 
-class Stem extends Component{
+class LifeSkills extends Component{
     constructor(props) {
         super(props);
     
 
-    this.state ={ListFilter1: [],
+    this.state ={ListFilter2: [],
     }}
     componentDidMount() {
         fetch(" http://localhost:8088/Subjects")
             .then(response => response.json())
             .then(ApiSubjectsId => {
             this.setState({
-                    ListFilter1: ApiSubjectsId
+                    ListFilter2: ApiSubjectsId
                    
 
                 })
@@ -27,11 +27,11 @@ class Stem extends Component{
     }
 
     render() {
-        const ListFilter1= this.state.ListFilter1
-            .filter(function (ListFilter1) { return ListFilter1.MetaSubjectId === 1;  console.log(ListFilter1);})
+        const ListFilter2 = this.state.ListFilter2
+            .filter(function (ListFilter2) { return ListFilter2.MetaSubjectId === 2;  console.log(ListFilter2);})
 
     return(
-       <DropdownButton id= "Stem" title ="Stem">
+       <DropdownButton id= "LifeSkills" title ="LifeSkills">
      
        </DropdownButton>
 
@@ -41,4 +41,4 @@ class Stem extends Component{
 }
 
 
-export default Stem;
+export default LifeSkills;

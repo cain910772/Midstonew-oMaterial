@@ -43,6 +43,7 @@ import "./Teacher.css";
         .then(r => r.json())
         .then(StudentInfo => {
             this.setState(StudentInfo)
+            console.log(StudentInfo)
         })
 
     }.bind(this)

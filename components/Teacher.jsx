@@ -81,15 +81,13 @@ export class Teacher extends Component {
                         placeholder="Enter Students SSN"
                     />
              
-
+             
                     <button>Add New Student</button>
                 </form>
-                <SubjectSearch  />
-               <SubjectSearchSmall />
-              <StudentSearch />
-             
-               
-            </div>
+              
+                <SubjectSearchSmall />
+               </div>
+            
         );
     }
 }
