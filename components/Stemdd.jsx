@@ -1,44 +1,56 @@
 import React, { Component } from "react";
-import { Button, DropdownButton, Dropdown, DropdownToggle, DropdownButtonProps } from 'react-bootstrap';
+import { Button, DropdownButton, Dropdown, DropdownToggle, DropdownButtonProps, MenuItem } from 'react-bootstrap';
 import ReactDOM from 'react-dom';
 import { Route, withRouter } from 'react-router-dom'
 import SubjectSearch from "./Dropdown";
-import SubjectsearchSmall from './SubjectDropdown';
+// import SubjectsearchSmall from './SubjectDropdown';
 
 
-class Stem extends Component{
+
+class Stem extends Component {
     constructor(props) {
         super(props);
-    
 
-    this.state ={ListFilter1: [],
-    }}
-    componentDidMount() {
-        fetch(" http://localhost:8088/Subjects")
-            .then(response => response.json())
-            .then(ApiSubjectsId => {
-            this.setState({
-                    ListFilter1: ApiSubjectsId
-                   
 
-                })
-                
-            })
+
+        this.state = {
+            Subjects: []
+        }
     }
+    componentDidMount() {
 
+        fetch(" http://localhost:8088/Subjects")
+            // Must be expMenuItemcit on how to parse the response
+            .then(response => response.json())
+            .then(apisubjects => {
+                let Filtered = apisubjects.filter(subjects => {
+                    return subjects.MetaSubjectId === 100;
+                })
+                this.setState({ Subjects: Filtered })
+                console.log(apisubjects)
+            }
+
+            )
+    }
     render() {
-        const ListFilter1= this.state.ListFilter1
-            .filter(function (ListFilter1) { return ListFilter1.MetaSubjectId === 1;  console.log(ListFilter1);})
-
-    return(
-       <DropdownButton id= "Stem" title ="Stem">
-     
-       </DropdownButton>
 
 
-    )
+
+        return (
+
+            <DropdownButton title="Stem">
+
+                {this.state.Subjects.map(subject => (
+                    <MenuItem eventKey={subject.id}>{subject.subject}</MenuItem>)
+                )}
+            </DropdownButton>
+
+        )
+    }
 }
-}
 
 
-export default Stem;
+
+export default Stem
+
+

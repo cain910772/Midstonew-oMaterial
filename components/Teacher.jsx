@@ -63,7 +63,7 @@ export class Teacher extends Component {
     render() {
         return (
             <div>
-                
+                <center>
                 <form className="NewStudentForm" onSubmit={this.handleSubmit}>
                     <input type ="text" val={this.state.firstName}
                         id="firstName"
@@ -80,11 +80,11 @@ export class Teacher extends Component {
                         onChange={e =>this.handleFormFieldChange(e)}
                         placeholder="Enter Students SSN"
                     />
-             
+           
              
                     <button>Add New Student</button>
                 </form>
-              
+                </center>
                 <SubjectSearchSmall />
                </div>
             

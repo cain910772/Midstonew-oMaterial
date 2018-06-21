@@ -29,9 +29,11 @@ class SocialStudies2 extends Component {
 
                     return subjects.MetaSubjectId === 400;
                     
-                    this.setState({ Subjects: Filtered })
-                })
-                console.log(Filtered);
+                    
+                         })
+                         this.setState({ Subjects: Filtered })
+                         console.log(apisubjects)
+                
                 // this.setState({
                 //     Subjects: apisubjects
                 // });
@@ -52,14 +54,15 @@ class SocialStudies2 extends Component {
             
             <DropdownButton title="Social Studies">
 
-                {this.state.Subjects.map(s =>
+                {this.state.Subjects.map(subject =>(
+                 <MenuItem eventKey={subject.id}>{subject.subject}</MenuItem>
 
 
 
-                    <li>{s}</li>
+                
 
                    
-                    
+                )          
          )}
 
 

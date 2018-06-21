@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import "./Login.css"
-
+import {Jumbotron, Grid , Row , Col, Image , Button, FormControl,Form,Checkbox } from 'react-bootstrap';
 
  class Login extends Component {
 
@@ -63,14 +63,11 @@ import "./Login.css"
             <form className="form-signin" onSubmit={this.handleLogin}>
                 <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
                 <label htmlFor="inputlastName" className="sr-only">Last Names</label>
-                <input onChange={this.handleFieldChange} type="lastName" id="lastName" className="form-control" placeholder="lastName address" required="" autoFocus="" />
+                <input onChange={this.handleFieldChange} type="lastName" id="lastName" className="form-control" placeholder="Email address" required="" autoFocus="" />
                 <label htmlFor="StudentsSSN" className="sr-only">Social Security Number</label>
                 <input onChange={this.handleFieldChange} type="StudentsSSN" id="StudentsSSN" className="form-control" placeholder="Password" required="" />
-                <div className="checkbox mb-3">
-                    <input type="checkbox" value="remember-me" /> Remember me
-                </div>
                 <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                <p className="mt-5 mb-3 text-muted">© 2017-2018</p>
+               
             </form>
         )
     }

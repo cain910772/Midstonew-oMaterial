@@ -4,7 +4,7 @@ import Login from "./Login"
 import {Jumbotron, Grid , Row , Col, Image , Button, FormControl,Form,Checkbox } from 'react-bootstrap';
 
 
-class TeacherLogin extends Component {
+class StudentLogin extends Component {
     state = {
         email:"",
         password:""
@@ -23,4 +23,4 @@ return(
 }
 }
 
-export default TeacherLogin
+export default StudentLogin

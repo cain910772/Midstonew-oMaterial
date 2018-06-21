@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import {Jumbotron, Grid , Row , Col, Image , Button, FormControl,Form } from 'react-bootstrap';
 import SearchStudent from './StudentSearch';
-                
+import SocialStudies2 from "./SocialStudies2";     
+import Stem from "./Stemdd";
+import LifeSkills from "./LifeSkills";
+import Electives from "./Electives";
+import LanguageArts from"./LanguageArts";
 class Grades extends Component {
    
    
@@ -11,9 +15,11 @@ class Grades extends Component {
 
         // Define initial state
         this.state = {
-            Subject: "",
-            Grades: "",
-            StudentsSSN: ""
+            studentId:'',
+            subjectId:'' ,
+            grades: '',
+            MetaSubjectId:'',
+            grade:'',
             
         }
     }
@@ -24,15 +30,19 @@ class Grades extends Component {
         evt.preventDefault()
 
         const newGradeInfo = {
-            Subject: this.state.Subject,
-            Grades: this.state.Grades,
-            StudentsSSN: this.state.StudentsSSN
+            studentId:this.state.studentId,
+            subjectId: this.state.SubjectId,
+            grades: this.state.Grades,
+            MetaSubjectId:this.state.MetaSubjectId,
+            grade:this.state.grade
         }
-
+   
         this.setState(prevState => ({
-            Subject: "",
-            Grades: "",
-            StudentsSSN:""
+            studentId:'',
+            subjectId:'' ,
+            grades: '',
+            MetaSubjectId:'',
+            grade:'',
         }))
 
         fetch("http://localhost:8088/students", {
@@ -63,11 +73,13 @@ class Grades extends Component {
                         onChange={e =>this.handleFormFieldChange(e)}
                         placeholder="Enter Students SSN"
                     />
-                    <input type ="text" val={this.state.Subject}
+                    {/* <input type ="text" val={this.state.Subject}
                         id="Subject"
                         onChange={e =>this.handleFormFieldChange(e)}
                         placeholder="Subject"
-                    />
+                        
+                    /> */}
+                    <SocialStudies2 /> <LifeSkills /> <Stem /> <LanguageArts /> <Electives />
                      <input type ="text" val={this.state.Grades}
                         id="Grades"
                         onChange={e =>this.handleFormFieldChange(e)}
